@@ -1,7 +1,7 @@
 
 $(function(){
 	var messages = [];
-    var socket = io.connect('http://vast-ocean-2728.herokuapp.com/');
+    var socket = io.connect('http://first-chat-nodejs.herokuapp.com/');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
