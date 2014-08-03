@@ -1,4 +1,4 @@
 first-chat-nodejs
 =================
 
-testing
+Este es mi primer proyecto, incursionando en nodejs
