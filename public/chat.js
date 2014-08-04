@@ -26,7 +26,7 @@ $(function(){
 
     sendButton.onclick = function () {
     	var text = field.value;
-    	socket.emit('send',{message:text,username:name.value});
+    	socket.emit('send',{message:text,username:name.value,test:"prueba"});
     	field.value="";
     };
 
