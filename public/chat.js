@@ -8,6 +8,7 @@ $(function(){
     var name = document.getElementById("name");
 
     socket.on('message',function(data){
+        console.log(data);
     	if (data.message) {
     		messages.push(data);
     		var html = '';
