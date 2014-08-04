@@ -21,6 +21,7 @@ var io = require('socket.io').listen(app.listen(port));
 io.sockets.on('connection',function(socket){
 	socket.emit('message',{message:'Welcome to the chat'});
 	socket.on('send',function(data){
+		console.log(data);
 		io.sockets.emit('message',data);
 	});
 });
