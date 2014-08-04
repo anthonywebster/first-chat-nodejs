@@ -1,7 +1,8 @@
 
 $(function(){
 	var messages = [];
-    var socket = io.connect('http://first-chat-nodejs.herokuapp.com/');
+    var url = window.location.indexOf("first-chat-nodejs.herokuapp.com") == -1 ? 'localhost:5000':'first-chat-nodejs.herokuapp.com';
+    var socket = io.connect(url);
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
@@ -17,6 +18,7 @@ $(function(){
 
     		}
     		content.innerHTML = html;
+            $('#content').scrollTop($("#content")[0].scrollHeight);
     	} else {
     		console.log("There is a problem:",data);
     	}
@@ -26,7 +28,7 @@ $(function(){
 
     sendButton.onclick = function () {
     	var text = field.value;
-    	socket.emit('send',{message:text,username:name.value,test:"prueba"});
+    	socket.emit('send',{message:text,username:name.value});
     	field.value="";
     };
 
