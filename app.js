@@ -10,7 +10,6 @@ app.get("/",function(req,res){
 	res.render("page");
 });
 
-
 app.get('/user/:id', function(req, res){
   res.send('user ' + req.params.id);
 });
