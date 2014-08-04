@@ -8,9 +8,9 @@ $(function(){
     var name = document.getElementById("name");
 
     socket.on('message',function(data){
-        console.log(data,messages);
-    	if (data.message) {
-    		messages.push(data);
+        if (data.message) {
+            messages.push(data);
+            console.log(messages);
     		var html = '';
     		for (var i = 0; i < messages.length; i++) {
     			html += '<b>'+ (messages[i].username ? messages[i].username : 'Server') + ':</b>';
