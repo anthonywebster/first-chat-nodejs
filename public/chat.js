@@ -35,4 +35,6 @@ $(function(){
             $('#send').trigger('click');
         }
     });
+
+    alert('test');
 })
