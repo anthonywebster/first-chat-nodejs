@@ -10,6 +10,7 @@ app.get("/",function(req,res){
 	res.render("page");
 });
 
+
 app.get('/user/:id', function(req, res){
   res.send('user ' + req.params.id);
 });
@@ -20,7 +21,9 @@ var io = require('socket.io').listen(app.listen(port));
 
 io.sockets.on('connection',function(socket){
 	socket.emit('message',{message:'Welcome to the chat'});
-	
+	socket.on('send',function(data){
+		io.sockets.emit('message',data);
+	});
 });
 
 console.log("Listening on port"+port);
