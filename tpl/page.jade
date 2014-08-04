@@ -6,6 +6,10 @@ html
 		script(src='https://cdn.socket.io/socket.io-1.0.6.js')
 		script(src='/chat.js')
 		script(src='js/handlebars-v1.3.0.js')
+		script(type="text/x-handlebars-template",id="template_message")
+			li
+				strong{{#if username}} {{username}} {{else}} server {{/if}}		
+				p{{message}}
 		link(rel="stylesheet", href="css/bootstrap.min.css")
 		link(rel="stylesheet", href="css/style.css")
 	body

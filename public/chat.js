@@ -7,17 +7,12 @@ $(function(){
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
     var name = document.getElementById("name");
-
+    var template = Handlebars.compile($('#template_message').html());
     socket.on('message',function(data){
         if (data.message) {
             messages.push(data);
-    		var html = '';
-    		for (var i = 0; i < messages.length; i++) {
-    			html += '<b>'+ (messages[i].username ? messages[i].username : 'Server') + ':</b>';
-    			html += messages[i].message + '<br />';
-
-    		}
-    		content.innerHTML = html;
+            var html = template(data);
+            $("#content").append(html);
             $('#content').scrollTop($("#content")[0].scrollHeight);
     	} else {
     		console.log("There is a problem:",data);
