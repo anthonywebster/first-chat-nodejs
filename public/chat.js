@@ -2,7 +2,7 @@
 $(function(){
 	var messages = [];
     var url = window.location.host.indexOf("first-chat-nodejs.herokuapp.com") == -1 ? 'localhost:5000':'first-chat-nodejs.herokuapp.com';
-    var socket = io.connect(url);
+    var socket = io.connect();
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
