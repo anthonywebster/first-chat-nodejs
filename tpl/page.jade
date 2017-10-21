@@ -13,10 +13,10 @@ html
 		link(rel="stylesheet", href="css/bootstrap.min.css")
 		link(rel="stylesheet", href="css/style.css")
 	body
-		#content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+		#content(style='width: 500px; height: 300px; margin: 10px 10px 20px 10px; border: solid 1px #999; overflow-y: scroll;')
 		.controls
-			| Name:
-			input#name(style='width:350px',type="text")
+			span(style='margin: 0 20px;') | Name:
+			input#name(style='width:350px; margin:5px 20px;',type="text")
 			br
-			input#field(style='width:350px;',type="text")
+			input#field(style='width:440px;margin:0 20px;',type="text")
 			input#send.btn.btn-success(type='button', value='send')
